@@ -278,6 +278,26 @@ INSERT INTO public.galaxy VALUES (6, 'Mice Galaxies', 290000000, 'Spiral Galaxy'
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'Charon', 14, 1212, 1978);
+INSERT INTO public.moon VALUES (2, 'Styx', 14, 16, 2012);
+INSERT INTO public.moon VALUES (3, 'Nix', 14, 31, 2005);
+INSERT INTO public.moon VALUES (4, 'Kerberos', 14, 19, 2011);
+INSERT INTO public.moon VALUES (5, 'Hydra', 14, 50, 2005);
+INSERT INTO public.moon VALUES (6, 'Ganymede', 10, 5270, 1610);
+INSERT INTO public.moon VALUES (7, 'Callisto', 10, 4821, 1610);
+INSERT INTO public.moon VALUES (8, 'Io', 10, 1821, 1610);
+INSERT INTO public.moon VALUES (9, 'Europa', 10, 3100, 1610);
+INSERT INTO public.moon VALUES (10, 'Amalthea', 10, 250, 1892);
+INSERT INTO public.moon VALUES (11, 'Metis', 10, 60, 1979);
+INSERT INTO public.moon VALUES (12, 'Adrastea', 10, 20, 1979);
+INSERT INTO public.moon VALUES (13, 'Thebe', 10, 116, 1979);
+INSERT INTO public.moon VALUES (14, 'Titania', 12, 1578, 1787);
+INSERT INTO public.moon VALUES (15, 'Oberon', 12, 375, 1787);
+INSERT INTO public.moon VALUES (16, 'Miranda', 12, 470, 1948);
+INSERT INTO public.moon VALUES (17, 'Cupid', 12, 18, 2003);
+INSERT INTO public.moon VALUES (18, 'Phobos', 9, 27, 1877);
+INSERT INTO public.moon VALUES (19, 'Triton', 13, 2706, 1846);
+INSERT INTO public.moon VALUES (20, 'Nereid', 13, 357, 1949);
 
 
 --
@@ -302,6 +322,9 @@ INSERT INTO public.planet VALUES (14, 'Pluto', 3, 5, false);
 -- Data for Name: satellite; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.satellite VALUES (3, 'Aqua', 'LEO', 8);
+INSERT INTO public.satellite VALUES (4, 'Galaxy-13', 'GEO', 8);
+INSERT INTO public.satellite VALUES (5, 'USA 209', 'LEO', 8);
 
 
 --
@@ -327,7 +350,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
@@ -341,7 +364,7 @@ SELECT pg_catalog.setval('public.planet_planet_id_seq', 14, true);
 -- Name: satellites_satellite_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.satellites_satellite_id_seq', 1, false);
+SELECT pg_catalog.setval('public.satellites_satellite_id_seq', 5, true);
 
 
 --
@@ -376,14 +399,6 @@ ALTER TABLE ONLY public.moon
 
 
 --
--- Name: moon moon_planet_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
---
-
-ALTER TABLE ONLY public.moon
-    ADD CONSTRAINT moon_planet_id_key UNIQUE (planet_id);
-
-
---
 -- Name: moon moon_unq; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -405,14 +420,6 @@ ALTER TABLE ONLY public.planet
 
 ALTER TABLE ONLY public.planet
     ADD CONSTRAINT planet_unq UNIQUE (name);
-
-
---
--- Name: satellite satellite_planet_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
---
-
-ALTER TABLE ONLY public.satellite
-    ADD CONSTRAINT satellite_planet_id_key UNIQUE (planet_id);
 
 
 --
