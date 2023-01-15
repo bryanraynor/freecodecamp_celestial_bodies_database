@@ -284,6 +284,18 @@ INSERT INTO public.galaxy VALUES (6, 'Mice Galaxies', 290000000, 'Spiral Galaxy'
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (3, 'Proxima Centauri b', 5, 0, false);
+INSERT INTO public.planet VALUES (4, 'Proxima Centauri c', 5, 0, false);
+INSERT INTO public.planet VALUES (5, 'Proxima Centauri d', 5, 0, false);
+INSERT INTO public.planet VALUES (6, 'Mercury', 3, 0, false);
+INSERT INTO public.planet VALUES (7, 'Venus', 3, 0, false);
+INSERT INTO public.planet VALUES (8, 'Earth', 3, 1, true);
+INSERT INTO public.planet VALUES (9, 'Mars', 3, 2, false);
+INSERT INTO public.planet VALUES (10, 'Jupiter', 3, 83, false);
+INSERT INTO public.planet VALUES (11, 'Saturn', 3, 83, false);
+INSERT INTO public.planet VALUES (12, 'Uranus', 3, 27, false);
+INSERT INTO public.planet VALUES (13, 'Neptune', 3, 14, false);
+INSERT INTO public.planet VALUES (14, 'Pluto', 3, 5, false);
 
 
 --
@@ -322,7 +334,7 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 14, true);
 
 
 --
@@ -385,14 +397,6 @@ ALTER TABLE ONLY public.moon
 
 ALTER TABLE ONLY public.planet
     ADD CONSTRAINT planet_pkey PRIMARY KEY (planet_id);
-
-
---
--- Name: planet planet_star_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
---
-
-ALTER TABLE ONLY public.planet
-    ADD CONSTRAINT planet_star_id_key UNIQUE (star_id);
 
 
 --
