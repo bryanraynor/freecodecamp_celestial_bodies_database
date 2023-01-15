@@ -296,6 +296,12 @@ INSERT INTO public.galaxy VALUES (6, 'Mice Galaxies', 290000000, 'Spiral Galaxy'
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 'Sirius', 1, 250, true);
+INSERT INTO public.star VALUES (2, 'Canopus', 1, 25, false);
+INSERT INTO public.star VALUES (3, 'Sol', 1, 4600, true);
+INSERT INTO public.star VALUES (4, 'Vega', 1, 455, false);
+INSERT INTO public.star VALUES (5, 'Alpha Centauri B', 1, 530000000, true);
+INSERT INTO public.star VALUES (6, 'Arcturus', 1, 710000000, false);
 
 
 --
@@ -330,7 +336,7 @@ SELECT pg_catalog.setval('public.satellites_satellite_id_seq', 1, false);
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
